@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1768476982320,
+      "tag": "0000_remarkable_tomorrow_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1768477075514,
+      "tag": "0001_lyrical_elektra",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1768478151689,
+      "tag": "0002_sweet_mathemanic",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1768479247079,
+      "tag": "0003_typical_roughhouse",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1768479660119,
+      "tag": "0004_wandering_microchip",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1768501837298,
+      "tag": "0005_natural_prowler",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1768505516913,
+      "tag": "0006_vengeful_vulcan",
+      "breakpoints": true
+    }
+  ]
+}
