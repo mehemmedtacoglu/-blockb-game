@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Rajdhani", sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --color-neon-pink: #ff00ff;
+  --color-neon-blue: #00ffff;
+  --color-neon-green: #39ff14;
+  --color-neon-purple: #bd00ff;
+}
+
+:root {
+  /* Neon Cyber-Arcade Theme - Dark Mode Default */
+  --background: oklch(0.10 0.05 280); /* Deep dark purple/black */
+  --foreground: oklch(0.95 0.02 280); /* White-ish */
+  
+  --card: oklch(0.15 0.06 280);
+  --card-foreground: oklch(0.95 0.02 280);
+  
+  --popover: oklch(0.15 0.06 280);
+  --popover-foreground: oklch(0.95 0.02 280);
+  
+  --primary: oklch(0.6 0.25 310); /* Neon Pink/Purple */
+  --primary-foreground: oklch(1 0 0);
+  
+  --secondary: oklch(0.25 0.1 260); /* Dark Blue */
+  --secondary-foreground: oklch(0.9 0.05 260);
+  
+  --muted: oklch(0.2 0.05 280);
+  --muted-foreground: oklch(0.7 0.05 280);
+  
+  --accent: oklch(0.25 0.15 300); /* Purple Accent */
+  --accent-foreground: oklch(0.95 0.02 280);
+  
+  --destructive: oklch(0.6 0.25 20);
+  --destructive-foreground: oklch(1 0 0);
+  
+  --border: oklch(0.3 0.1 280);
+  --input: oklch(0.3 0.1 280);
+  --ring: oklch(0.6 0.25 310);
+  
+  --radius: 0.25rem; /* Techy, slightly sharp */
+}
+
+.dark {
+  /* Same as root since we are dark-first */
+  --background: oklch(0.10 0.05 280);
+  --foreground: oklch(0.95 0.02 280);
+  --card: oklch(0.15 0.06 280);
+  --card-foreground: oklch(0.95 0.02 280);
+  --popover: oklch(0.15 0.06 280);
+  --popover-foreground: oklch(0.95 0.02 280);
+  --primary: oklch(0.6 0.25 310);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.25 0.1 260);
+  --secondary-foreground: oklch(0.9 0.05 260);
+  --muted: oklch(0.2 0.05 280);
+  --muted-foreground: oklch(0.7 0.05 280);
+  --accent: oklch(0.25 0.15 300);
+  --accent-foreground: oklch(0.95 0.02 280);
+  --destructive: oklch(0.6 0.25 20);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.3 0.1 280);
+  --input: oklch(0.3 0.1 280);
+  --ring: oklch(0.6 0.25 310);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    background-image: 
+      linear-gradient(rgba(26, 11, 46, 0.9), rgba(5, 5, 16, 0.95)),
+      linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, .05) 25%, rgba(255, 0, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, .05) 75%, rgba(255, 0, 255, .05) 76%, transparent 77%, transparent),
+      linear-gradient(90deg, transparent 24%, rgba(0, 255, 255, .05) 25%, rgba(0, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, .05) 75%, rgba(0, 255, 255, .05) 76%, transparent 77%, transparent);
+    background-size: 100% 100%, 50px 50px, 50px 50px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-wider;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 5px var(--color-primary), 0 0 10px var(--color-primary);
+  }
+  
+  .neon-box {
+    box-shadow: 0 0 5px var(--color-primary), inset 0 0 5px var(--color-primary);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px) rotate(-1deg); }
+  75% { transform: translateX(5px) rotate(1deg); }
+}
+
+.animate-shake {
+  animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
+}
